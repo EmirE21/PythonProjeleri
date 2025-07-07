@@ -1,4 +1,4 @@
-def gano_hesaplama(ders_ismi_liste, ders_kredi_liste, ders_harf_notu_liste):
+def agno_hesaplama(ders_ismi_liste, ders_kredi_liste, ders_harf_notu_liste):
     # Harf notları ve karşılık gelen sayısal değerler.
     harf_notu_sözlük = {
         "aa": 4.0,
@@ -19,11 +19,11 @@ def gano_hesaplama(ders_ismi_liste, ders_kredi_liste, ders_harf_notu_liste):
         if harf_notu not in harf_notu_sözlük:
             print(f"Uyarı: Lütfen harf notlarını küçük harflerle girdiğinizden emin olun.")
             return
-        # GANO hesabı için gerekli hesaplamalar yapılır.
+        # AGNO hesabı için gerekli hesaplamalar yapılır.
         akts += kredi
         toplam_ortalama += harf_notu_sözlük[harf_notu] * kredi
-    gano_değeri = toplam_ortalama / akts
-    return gano_değeri
+    agno_değeri = toplam_ortalama / akts
+    return agno_değeri
 # Kullanıcıdan ders bilgileri alınır ve koşul sağlanırsa bilgiler kendi aralarında listelenir.
 ders_bilgisi_girdi = input("Lütfen ders bilgilerinizi giriniz (örn: matematik 4 aa fizik 3 bb kimya 2 cc): ")
 ders_bilgisi_liste = ders_bilgisi_girdi.split()
@@ -33,5 +33,5 @@ else:
     ders_ismi_liste = ders_bilgisi_liste[0:len(ders_bilgisi_liste):3]
     ders_kredi_liste = [int(kredi) for kredi in ders_bilgisi_liste[1:len(ders_bilgisi_liste):3]]
     ders_harf_notu_liste = ders_bilgisi_liste[2:len(ders_bilgisi_liste):3]
-    sonuc = gano_hesaplama(ders_ismi_liste, ders_kredi_liste, ders_harf_notu_liste)
-    print(f"GANO: {sonuc}")
+    sonuc = agno_hesaplama(ders_ismi_liste, ders_kredi_liste, ders_harf_notu_liste)
+    print(f"AGNO: {sonuc}")
