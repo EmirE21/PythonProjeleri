@@ -14,7 +14,7 @@ def agno_hesaplama(ders_ismi_liste, ders_kredi_liste, ders_harf_notu_liste):
     akts = 0.0
     toplam_ortalama = 0.0
     # Üç ayrı liste bir araya getirilir ve isim, kredi, harf_notu formatında tekrar düzenlenir.
-    for isim, kredi, harf_notu in zip(ders_ismi_liste, ders_kredi_liste, ders_harf_notu_liste):
+    for kredi, harf_notu in zip(ders_kredi_liste, ders_harf_notu_liste):
         # Girilen harf notu doğru değilse uyarı verilir.
         if harf_notu not in harf_notu_sözlük:
             print(f"Uyarı: Lütfen harf notlarını küçük harflerle girdiğinizden emin olun.")
@@ -33,5 +33,5 @@ else:
     ders_ismi_liste = ders_bilgisi_liste[0:len(ders_bilgisi_liste):3]
     ders_kredi_liste = [int(kredi) for kredi in ders_bilgisi_liste[1:len(ders_bilgisi_liste):3]]
     ders_harf_notu_liste = ders_bilgisi_liste[2:len(ders_bilgisi_liste):3]
-    sonuc = agno_hesaplama(ders_ismi_liste, ders_kredi_liste, ders_harf_notu_liste)
-    print(f"AGNO: {sonuc}")
+sonuc = agno_hesaplama(ders_ismi_liste, ders_kredi_liste, ders_harf_notu_liste)
+print(f"AGNO: {sonuc}")
